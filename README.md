@@ -143,9 +143,8 @@ See the [LICENSE][license] file for more informations.
 
 ## :gem: Acknowledgements
 
-Special thanks to:
+Adapted from:
 
-- [alrra](https://github.com/alrra) for [browser-logos](https://github.com/alrra/browser-logos);
-- [tandpfun](https://github.com/tandpfun) for [skill-icons](https://github.com/tandpfun/skill-icons);
+- [doinel1a's template](https://github.com/doinel1a/astro-vanilla-ts)
 
 [Back to :arrow_up:](#astro-vanilla-typescript--template "Back to 'Table of contents' section")
