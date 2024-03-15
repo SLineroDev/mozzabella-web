@@ -2,17 +2,10 @@
 [pnpm]: https://pnpm.io/installation
 [yarn]: https://yarnpkg.com/getting-started/install
 [demo]: https://astro-vanilla-ts.d1a.app
-[license]: https://github.com/doinel1a/astro-vanilla-ts/blob/main/LICENSE
-[code-of-conduct]: https://github.com/doinel1a/astro-vanilla-ts/blob/main/CODE_OF_CONDUCT.md
-[issues]: https://github.com/doinel1a/astro-vanilla-ts/issues
-[pulls]: https://github.com/doinel1a/astro-vanilla-ts/pulls
+[issues]: https://github.com/slinerodev/astro-starter-template/issues
+[pulls]: https://github.com/slinerodev/astro-starter-template/pulls
 [browserslist]: https://browsersl.ist/#q=last+3+versions%2C%3E+0.2%25%2C+not+dead
-[graphviz]: https://www.graphviz.org/download
 [commitlint]: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-[react-icon]: https://skillicons.dev/icons?i=react
-[ts-icon]: https://skillicons.dev/icons?i=ts
-[js-icon]: https://skillicons.dev/icons?i=js
-[tailwind-icon]: https://skillicons.dev/icons?i=tailwind
 [chrome-icon]: https://github.com/alrra/browser-logos/blob/main/src/chrome/chrome_64x64.png
 [firefox-icon]: https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_64x64.png
 [edge-icon]: https://github.com/alrra/browser-logos/blob/main/src/edge/edge_64x64.png
@@ -43,21 +36,23 @@ This repository is ideal for front-end developers who want to build modern, fast
 
 ## :computer: Getting started
 
-### Prerequisites:
+### Prerequisites
 
 - JavaScript runtime **[node.js][node]**;
 - **(OPTIONAL)** Alternative package manager:
   - **[pnpm][pnpm]** <br /> or
   - **[yarn][yarn]**
 
-### Start developing:
+### Start developing
 
 - Get the repository:
   - click **"Use this template"** &nbsp; or &nbsp; **"Fork"** button <br /> alternately
   - **clone** the repository through your terminal: <br />
+
     ```bash
-    git clone https://github.com/doinel1a/astro-vanilla-ts YOUR-PROJECT-NAME
+    git clone https://github.com/slinerodev/astro-starter-template YOUR-PROJECT-NAME
     ```
+
 - Open your terminal or code editor to the path your project is located, and run:
 
   |                                                  | **npm**           | **pnpm**       | **yarn**       |
@@ -117,20 +112,20 @@ Contributions are what make the open source community such an amazing place to l
 Any contribution is greatly appreciated: big or small, it can be documentation updates, adding new features or something bigger.  
 Please check the [**contributing guide**][code-of-conduct] for details on how to help out and keep in mind that all commits must follow the **[conventional commit format][commitlint]**.
 
-### How to contribute:
+### How to contribute
 
-1.  **[Get started](#computer-getting-started "Go to 'Getting started' section");**
-2.  **For a new feature:**
-    1.  Create a new branch: `git checkout -b feat/NEW-FEATURE`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "feat: NEW FEATURE"`;
-    4.  Push your new branch: `git push origin feat/NEW-FEATURE`;
-3.  **For a bug fix:**
-    1.  Create a new branch: `git checkout -b fix/BUG-FIX`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "fix: BUG FIX"`;
-    4.  Push your new branch: `git push origin fix/BUG-FIX`;
-4.  **Open a new [pull request][pulls];**
+1. **[Get started](#computer-getting-started "Go to 'Getting started' section");**
+2. **For a new feature:**
+    1. Create a new branch: `git checkout -b feat/NEW-FEATURE`;
+    2. Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
+    3. Commit your changes: `git commit -m "feat: NEW FEATURE"`;
+    4. Push your new branch: `git push origin feat/NEW-FEATURE`;
+3. **For a bug fix:**
+    1. Create a new branch: `git checkout -b fix/BUG-FIX`;
+    2. Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
+    3. Commit your changes: `git commit -m "fix: BUG FIX"`;
+    4. Push your new branch: `git push origin fix/BUG-FIX`;
+4. **Open a new [pull request][pulls];**
 
 [Back to :arrow_up:](#astro-vanilla-typescript--template "Back to 'Table of contents' section")
 
