@@ -1,13 +1,13 @@
 {
   "lang": "es-ES",
-  "name": "Astro Vanilla TypeScript — Template",
-  "short_name": "Astro Vanilla TypeScript — Template",
-  "description": "Boilerplate designed to quickly bootstrap a Astro.JS project. It comes configured with TypeScript, TailwindCSS, Vite, PostCSS, Eslint and Prettier.",
+  "name": "__CHANGE__",
+  "short_name": "__CHANGE__",
+  "description": "__CHANGE__",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#09090b",
-  "background_color": "#09090b",
+  "theme_color": "#__CHANGE__",
+  "background_color": "#__CHANGE__",
   "icons": [
     {
       "src": "/favicon.svg",
