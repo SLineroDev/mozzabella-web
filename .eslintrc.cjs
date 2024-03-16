@@ -42,7 +42,7 @@ module.exports = {
       }
     },
     {
-      files: ['**/*.astro/*.ts', '*.astro/*.ts'],
+      files: ['**/*.astro/*.ts', '*.astro/*.ts', '**/*.ts', '*.ts'],
       env: {
         browser: true,
         es2020: true

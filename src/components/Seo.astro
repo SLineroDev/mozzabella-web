@@ -1,20 +1,12 @@
 ---
+import type { SeoProps } from '@/lib/types/seoProps';
+
 import jost from '@fontsource-variable/jost/files/jost-latin-wght-normal.woff2';
 import atomic from '/fonts/atomic.woff2';
 
 import { seoConfig } from '@/utils/seoConfig';
 
-interface Props {
-  title: string;
-  description: string;
-  preload?: Array<{
-    as: string;
-    href: string;
-    type: string;
-  }>;
-  canonical?: string;
-  image?: string;
-}
+interface Props extends SeoProps {}
 
 const {
   title,
