@@ -46,7 +46,6 @@ const canonicalURL = canonical
 <link rel='canonical' href={canonicalURL} />
 <meta name='viewport' content='width=device-width' />
 <meta name='theme-color' content={seoConfig.themeColor} />
-<link rel='sitemap' type='application/xml' href='/sitemap.xml' />
 
 <meta name='keywords' content={seoConfig.keywords} />
 
@@ -70,9 +69,12 @@ const canonicalURL = canonical
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <link rel='apple-touch-icon' href='/img/icons/apple-touch-icon.png' />
 <link rel='manifest' href='/manifest.webmanifest' />
+<link rel='sitemap' type='application/xml' href='/sitemap.xml' />
+<link rel='robots' href='/robots.txt' />
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <meta name='msapplication-config' content='/browserconfig.xml' />
+<meta name='google-site-verification' content='__CHANGE__' />
 
 {
   !import.meta.env.DEV && (
