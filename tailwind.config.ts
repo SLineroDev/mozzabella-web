@@ -4,6 +4,10 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: '1rem'
+    },
     extend: {
       colors: {
         primary: 'var(--primary)',
@@ -13,6 +17,10 @@ export default {
         'color-dark': 'var(--color-dark)',
         'accent-primary': 'var(--accent-primary)',
         'accent-primary-state': 'var(--accent-primary-state)'
+      },
+      fontFamily: {
+        sans: ['"Inter Variable", sans-serif'],
+        serif: ['"Merriweather", serif']
       }
     }
   }

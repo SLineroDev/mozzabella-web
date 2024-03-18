@@ -16,9 +16,9 @@ const {
   image = seoConfig.image.url
 } = Astro.props as Props;
 
-const canonicalURL = canonical
+/* const canonicalURL = canonical
   ? new URL(canonical, Astro.site)
-  : new URL(Astro.url.pathname, Astro.site);
+  : new URL(Astro.url.pathname, Astro.site); */
 ---
 
 <title>{title}</title>
@@ -26,9 +26,9 @@ const canonicalURL = canonical
 <meta charset='utf-8' />
 <meta name='description' content={description} />
 
-<link rel='preload' href={atomic} as='font' type='font/woff2' crossorigin />
+<!-- <link rel='preload' href={atomic} as='font' type='font/woff2' crossorigin />
 <link rel='preload' href={jost} as='font' type='font/woff2' crossorigin />
-
+ -->
 {
   preload?.map(({ href, as, type }) => (
     <link rel='preload' href={href} as={as} type={type} crossorigin />
@@ -60,7 +60,7 @@ const canonicalURL = canonical
 <link rel='icon' href='/img/icons/favicon.ico' sizes='32x32' />
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <link rel='apple-touch-icon' href='/img/icons/apple-touch-icon.png' />
-<link rel='manifest' href='/manifest.webmanifest' />
+<link rel='manifest' href='/app.webmanifest' />
 <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
 <link rel='robots' href='/robots.txt' />
 
