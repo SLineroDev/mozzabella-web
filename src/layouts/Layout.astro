@@ -1,11 +1,13 @@
 ---
 import '@/styles/globals.css';
-import '@/styles/globals.scss';
+import '@fontsource-variable/inter';
+import '@fontsource/merriweather/700-italic.css';
 
 import type { SeoProps } from '@/lib/types/seoProps';
 
 import { ViewTransitions } from 'astro:transitions';
 
+import Nav from '@/components/Nav.astro';
 import Seo from '@/components/Seo.astro';
 
 interface Props extends SeoProps {}
@@ -26,6 +28,7 @@ const { title, description, preload, canonical, image } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <Nav />
     <slot />
   </body>
 </html>

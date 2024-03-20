@@ -1,0 +1,75 @@
+<div id='hamburgerButton' class='hover:cursor-pointer'>
+  <span class='bar'></span>
+  <span class='bar'></span>
+  <span class='bar [.is-open]:translate-y-8'></span>
+</div>
+
+<style>
+  #hamburgerButton {
+    justify-self: end;
+    margin-right: 25px;
+    display: none;
+  }
+  #hamburgerButton .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #3f3f3f;
+    margin: 5px auto;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+    -webkit-transition:
+      opacity 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+    -moz-transition:
+      opacity 0.3s ease-in-out,
+      -moz-transform 0.3s ease-in-out;
+  }
+
+  #hamburgerButton:hover {
+    cursor: pointer;
+  }
+
+  #hamburgerButton.is-open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburgerButton.is-open .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #hamburgerButton.is-open .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    #hamburgerButton,
+    .bar {
+      display: block;
+      cursor: pointer;
+    }
+    #hamburgerButton {
+      transform: translate(0%) !important;
+    }
+  }
+</style>
+
+<script>
+  import { $ } from '@/lib/dom-selector';
+
+  document.addEventListener('astro:page-load', function () {
+    const menuToggle = $('#hamburgerButton');
+
+    menuToggle.addEventListener('click', function () {
+      menuToggle.classList.toggle('is-open');
+      const hamburgerButtonClick = new CustomEvent('hamburgerButtonClick');
+      menuToggle.dispatchEvent(hamburgerButtonClick);
+    });
+  });
+</script>

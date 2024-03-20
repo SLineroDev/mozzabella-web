@@ -1,0 +1,49 @@
+---
+import HamburgerButton from './HamburgerButton.astro';
+---
+
+<header class='border-b border-black py-2'>
+  <nav class='container'>
+    <ul class='flex items-center justify-between'>
+      <li class='hidden transition-colors hover:text-accent-primary lg:block'>
+        <a href='/crea-tu-pizza'>Crea tu pizza</a>
+      </li>
+      <li class='hidden transition-colors hover:text-accent-primary lg:block'>
+        <a href='/promociones'>Promociones</a>
+      </li>
+      <span class='flex-initial lg:hidden'></span>
+      <li>
+        <h1 class='font-serif text-3xl font-bold text-accent-primary'>
+          <a href='/'>mozzabella</a>
+        </h1>
+      </li>
+      <li class='hidden transition-colors hover:text-accent-primary lg:block'>
+        <a href='/carta'>La Carta</a>
+      </li>
+      <li class='hidden transition-colors hover:text-accent-primary lg:block'>
+        <a href='/reserva'>Reservar Mesa</a>
+      </li>
+      <HamburgerButton />
+    </ul>
+  </nav>
+</header>
+
+<script>
+  import { $ } from '@/lib/dom-selector';
+
+  document.addEventListener('astro:page-load', () => {
+    const nav = $('nav');
+    const menuButton = $('#menuButton');
+    const innerMenuButton = $('#innerMenuButton');
+
+    menuButton?.addEventListener('hamburgerButtonClicked', () => toggleMenu(nav));
+    innerMenuButton?.addEventListener('hamburgerButtonClicked', () => toggleMenu(nav));
+
+    function toggleMenu(nav: HTMLElement | null) {
+      $('#menuMobileContent')?.classList.toggle('open');
+      nav?.classList.toggle('open');
+      document.body.classList.toggle('overflow-hidden');
+      document.body.classList.toggle('lg:overflow-auto');
+    }
+  });
+</script>

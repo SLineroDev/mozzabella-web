@@ -1,13 +1,13 @@
 {
   "lang": "es-ES",
-  "name": "__CHANGE__",
-  "short_name": "__CHANGE__",
-  "description": "__CHANGE__",
+  "name": "Mozzabella",
+  "short_name": "Mozzabella",
+  "description": "Mozzabella | Pizzeria Italiana para toda la familia",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#__CHANGE__",
-  "background_color": "#__CHANGE__",
+  "theme_color": "#d23729",
+  "background_color": "#f7f6ef",
   "icons": [
     {
       "src": "/favicon.svg",
@@ -23,4 +23,3 @@
     }
   ]
 }
-

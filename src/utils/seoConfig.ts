@@ -2,17 +2,16 @@
  * Defines the default SEO configuration for the website.
  */
 export const seoConfig = {
-  baseURL: 'https://__CHANGE__/', // Production URL.
-  description: '__CHANGE__',
-  themeColor: '#D23729', //__CHANGE__
+  description: 'Mozzabella | Pizzeria Italiana para toda la familia',
+  themeColor: '#d23729',
   type: 'website',
   image: {
     url: '/img/og.png',
-    alt: '__CHANGE__',
+    alt: 'Mozzabella',
     width: 705,
     height: 606
   },
-  siteName: '__CHANGE__',
+  siteName: 'Mozzabella',
   keywords: '',
   twitter: {
     card: 'summary_large_image'
@@ -23,11 +22,11 @@ export const seoConfig = {
  * Defines the configuration for PWA webmanifest.
  */
 export const manifest = {
-  name: '__CHANGE__',
-  short_name: '__CHANGE__',
-  description: '__CHANGE__',
-  theme_color: '#D23729', //__CHANGE__
-  background_color: '#D23729', //__CHANGE__
+  name: 'Mozzabella',
+  short_name: 'Mozzabella',
+  description: 'Mozzabella | Pizzeria Italiana para toda la familia',
+  theme_color: '#d23729',
+  background_color: '#f7f6ef',
   display: 'fullscreen',
   icons: [
     {

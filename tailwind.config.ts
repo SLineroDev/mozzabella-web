@@ -6,7 +6,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '1rem'
+      padding: '3rem'
     },
     extend: {
       colors: {
