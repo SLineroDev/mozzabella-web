@@ -1,50 +1,48 @@
 ---
-import Hamburger from './Hamburger.astro';
+import HamburgerButton from './HamburgerButton.astro';
 ---
 
 <div class='nav-wrapper'>
   <nav class='navbar container'>
-    <ul class='nav-items justify-between'>
+    <ul class='nav-items'>
       <li class='nav-item'><a href='/crea-tu-pizza'>Crea tu pizza</a></li>
       <li class='nav-item'><a href='/promociones'>Promociones</a></li>
-      <li class='nav-item font-serif text-3xl font-bold italic text-accent-primary'>
+      <li class='nav-item hidden font-serif text-3xl font-bold italic text-accent-primary md:block'>
         <a href='/'>mozzabella</a>
       </li>
       <li class='nav-item'><a href='/carta'>La Carta</a></li>
       <li class='nav-item'><a href='/reserva'>Reservar Mesa</a></li>
     </ul>
-    <span class='hidden'>
+    <span class='flex-1 text-center md:hidden'>
       <a class='font-serif text-3xl font-bold italic text-accent-primary' href='/'>mozzabella</a>
     </span>
-    <Hamburger id='hamburgerButton' />
+    <HamburgerButton id='hamburgerButton' />
   </nav>
 
-  <style lang='scss'>
-    /* BASIC SETUP */
+  <style>
     .nav-wrapper {
       width: 100%;
       position: -webkit-sticky; /* Safari */
       position: sticky;
       top: 0;
       border-bottom: var(--secondary) 1px solid;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      overflow: hidden;
+      align-items: center;
+    }
 
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        height: 50px;
-        overflow: hidden;
-        align-items: center;
-      }
-
-      .nav-items {
-        list-style: none;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transform: translate(0);
-        transition: transform 0.7s ease-in-out;
-      }
+    .nav-items {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transform: translate(0);
+      transition: transform 0.7s ease-in-out;
     }
 
     /* NAVIGATION */
@@ -62,7 +60,7 @@ import Hamburger from './Hamburger.astro';
         display: flex;
         flex-direction: column;
         position: fixed;
-        justify-content: start;
+        justify-content: flex-start;
         top: 50px;
         left: 0;
         width: 100%;
@@ -90,7 +88,7 @@ import Hamburger from './Hamburger.astro';
     import { $ } from '@/lib/dom-selector';
 
     function toggleMenu(nav: HTMLElement | null) {
-      nav.classList.toggle('mobile-nav');
+      nav?.classList.toggle('mobile-nav');
     }
     document.addEventListener('astro:page-load', function () {
       const menuButton = $('#hamburgerButton');
