@@ -11,9 +11,11 @@ import slider1 from '@/assets/images/slider1.png';
         Qué rico <span class='highlight-text'>ese trocito</span>
         que sobra para el desayuno
       </div>
-      <img
+      <Image
         class='slider-image'
-        src='img/slider1.png'
+        height={400}
+        src={slider1}
+        loading={'eager'}
         alt={'Dos chicas sonriendo, una comiendo una porción de pizza y la otra bebiendo de una taza'}
       />
       <div class='slider-description'>
@@ -54,10 +56,11 @@ import slider1 from '@/assets/images/slider1.png';
         position: relative;
         z-index: -1;
         aspect-ratio: 290 / 317;
-        margin-block: -2rem -1rem;
+        margin-block: -3rem;
         max-height: 400px;
         width: 100%;
         max-width: 336px;
+        object-fit: contain;
       }
 
       &-description {
@@ -87,7 +90,7 @@ import slider1 from '@/assets/images/slider1.png';
           font-weight: 700;
           padding: 1rem 2rem;
           border: none;
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           cursor: pointer;
 
           transition: background-color 0.2s ease-in-out;
