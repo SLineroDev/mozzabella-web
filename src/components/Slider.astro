@@ -1,0 +1,131 @@
+---
+import { Image } from 'astro:assets';
+
+import slider1 from '@/assets/images/slider1.png';
+---
+
+<section>
+  <div class='container'>
+    <div class='slider'>
+      <div class='slider-text'>
+        Qué rico <span class='highlight-text'>ese trocito</span>
+        que sobra para el desayuno
+      </div>
+      <img
+        class='slider-image'
+        src='img/slider1.png'
+        alt={'Dos chicas sonriendo, una comiendo una porción de pizza y la otra bebiendo de una taza'}
+      />
+      <div class='slider-description'>
+        <div class='slider-description__text'>2 medianas</div>
+        <div class='slider-description__price'>15,99 €</div>
+        <button class='slider-description__button'>Lo quiero</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang='scss'>
+  section {
+    border-bottom: 1px var(--secondary) solid;
+    padding: 2rem 0;
+
+    .slider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &-text {
+        font-family: var(--font-serif);
+        font-size: var(--font-4xl);
+        font-weight: 700;
+        max-width: 15ch;
+        align-self: flex-start;
+
+        & span.highlight-text {
+          font-weight: bold;
+          font-style: italic;
+          color: var(--accent-primary);
+        }
+      }
+
+      &-image {
+        position: relative;
+        z-index: -1;
+        aspect-ratio: 290 / 317;
+        margin-block: -2rem -1rem;
+        max-height: 400px;
+        width: 100%;
+        max-width: 336px;
+      }
+
+      &-description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+
+        &__text {
+          font-weight: 300;
+          font-size: 16px;
+          font-size: var(--font-xl);
+          text-transform: uppercase;
+        }
+
+        &__price {
+          font-family: var(--font-serif);
+          font-size: 32px;
+          font-size: var(--font-4xl);
+        }
+
+        &__button {
+          background-color: var(--accent-primary);
+          color: var(--primary);
+          font-size: var(--font-xl);
+          font-weight: 700;
+          padding: 1rem 2rem;
+          border: none;
+          margin-top: 1rem;
+          cursor: pointer;
+
+          transition: background-color 0.2s ease-in-out;
+
+          &:hover {
+            background-color: var(--accent-primary-state);
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 630px) {
+    section .slider {
+      &-image {
+        margin-block: -3rem;
+      }
+    }
+  }
+
+  @media (min-width: 890px) {
+    section .slider {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-text {
+        flex: 1 0 auto;
+        min-width: 0;
+      }
+
+      &-image {
+        margin: 60px 0 0 -15rem;
+      }
+
+      &-description {
+        align-self: flex-end;
+        width: max-content;
+        padding-left: 2rem;
+      }
+    }
+  }
+</style>

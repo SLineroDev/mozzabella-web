@@ -1,4 +1,4 @@
-<div id='hamburgerButton' class='hover:cursor-pointer'>
+<div id={Astro.props.id} class='hover:cursor-pointer'>
   <span class='bar'></span>
   <span class='bar'></span>
   <span class='bar [.is-open]:translate-y-8'></span>
@@ -6,13 +6,11 @@
 
 <style>
   #hamburgerButton {
-    justify-self: end;
-    margin-right: 25px;
     display: none;
   }
   #hamburgerButton .bar {
     width: 25px;
-    height: 3px;
+    height: 1px;
     background-color: #3f3f3f;
     margin: 5px auto;
     transition:
@@ -35,10 +33,10 @@
   }
 
   #hamburgerButton.is-open .bar:nth-child(1) {
-    -webkit-transform: translateY(8px) rotate(45deg);
-    -ms-transform: translateY(8px) rotate(45deg);
-    -o-transform: translateY(8px) rotate(45deg);
-    transform: translateY(8px) rotate(45deg);
+    -webkit-transform: translateY(4px) rotate(45deg);
+    -ms-transform: translateY(4px) rotate(45deg);
+    -o-transform: translateY(4px) rotate(45deg);
+    transform: translateY(4px) rotate(45deg);
   }
 
   #hamburgerButton.is-open .bar:nth-child(3) {

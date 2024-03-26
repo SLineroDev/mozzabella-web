@@ -25,6 +25,7 @@
     "@fontsource-variable/inter": "^5.0.17",
     "@fontsource/merriweather": "^5.0.12",
     "astro": "^4.5.4",
+    "modern-normalize": "^2.0.0",
     "typescript": "^5.4.2"
   },
   "devDependencies": {
@@ -48,7 +49,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.12",
-    "sass": "^1.72.0",
-    "tailwindcss": "^3.4.1"
+    "sass": "^1.72.0"
   }
 }
+

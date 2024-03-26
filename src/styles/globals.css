@@ -1,5 +1,4 @@
-@tailwind base;
-@tailwind components;
+@import 'node_modules/modern-normalize/modern-normalize.css';
 
 :root {
   /*
@@ -12,16 +11,55 @@
   --color-light: var(--primary);
   --accent-primary: #d23729; /* red-600 */
   --accent-primary-state: #b82a1d; /* red-700 */
+
+  --font-sans: 'Inter Variable', sans-serif;
+  --font-serif: 'Merriweather', serif;
+
+  --font-xl: clamp(1rem, 0.8043rem + 0.8696vw, 1.5rem);
+  --font-2xl: clamp(1.5rem, 0.913rem + 2.6087vw, 3rem);
+  --font-4xl: clamp(2rem, 1.2174rem + 3.4783vw, 4rem);
 }
 
-@layer base {
-  html,
-  body {
-    @apply h-full w-full;
-  }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
 
-  body {
-    @apply bg-primary text-color-dark;
-    font-family: 'Inter Variable', serif;
+body {
+  background-color: var(--primary);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+}
+
+.mozzabella {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--accent-primary);
+}
+
+.container {
+  margin-inline: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding-inline: 3rem;
   }
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }

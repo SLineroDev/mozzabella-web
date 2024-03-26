@@ -1,0 +1,79 @@
+---
+
+---
+
+<section id={Astro.props.id}>
+  <ul class='mobile-nav-items'>
+    <li class='nav-item'><a href='/crea-tu-pizza'>Crea tu pizza</a></li>
+    <li class='nav-item'><a href='/promociones'>Promociones</a></li>
+    <li class='nav-item'><a href='/carta'>La Carta</a></li>
+    <li class='nav-item'><a href='/reserva'>Reservar Mesa</a></li>
+  </ul>
+  <div class='cart'>
+    <span>Tu carrito</span>
+  </div>
+  <footer>
+    <div class='mozzabella'>mozzabella</div>
+    <div>900 000 000</div>
+    <div>C/ La Bonita 7, Málaga (España)</div>
+  </footer>
+</section>
+
+<style>
+  /* Mobile NavBar full width and full height */
+  section {
+    /* Positioning */
+    position: fixed;
+    top: 101px;
+    left: 0;
+
+    /* Box Model */
+    width: 100%;
+    height: calc(100svh - 101px);
+    overflow: hidden;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Text */
+    text-align: center;
+
+    background-color: var(--primary);
+
+    /* Transformations and Transitions */
+    transform: translate(-101%);
+    transition: transform 0.7s ease-in-out;
+  }
+
+  .mobile-nav-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 3rem;
+    flex: 1;
+  }
+
+  .cart {
+    border-color: var(--secondary);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-block: 2rem;
+  }
+
+  footer {
+    padding-block: 2rem;
+  }
+
+  .mobile-nav {
+    transform: translate(0);
+  }
+
+  @media (width >= 768px) {
+    section {
+      display: none;
+    }
+  }
+</style>

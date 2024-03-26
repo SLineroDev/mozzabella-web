@@ -1,0 +1,44 @@
+<ul class='desktop-nav-items'>
+  <li class='nav-item'><a href='/crea-tu-pizza'>Crea tu pizza</a></li>
+  <li class='nav-item'><a href='/promociones'>Promociones</a></li>
+  <li class='nav-item mozzabella-desktop'>
+    <a class='mozzabella' href='/'>mozzabella</a>
+  </li>
+  <li class='nav-item'><a href='/carta'>La Carta</a></li>
+  <li class='nav-item'><a href='/reserva'>Reservar Mesa</a></li>
+</ul>
+
+<style>
+  .desktop-nav-items {
+    display: none;
+  }
+
+  .mozzabella {
+    font-family: var(--font-serif);
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent-primary);
+  }
+
+  .nav-item:not(.mozzabella-desktop) {
+    text-transform: uppercase;
+  }
+
+  @media (width >= 768px) {
+    .mozzabella-desktop {
+      display: block;
+    }
+
+    ul.desktop-nav-items {
+      display: flex;
+      position: initial;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      list-style: none;
+      transform: translate(0);
+    }
+  }
+</style>

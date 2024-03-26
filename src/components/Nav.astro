@@ -1,102 +1,86 @@
 ---
-import HamburgerButton from './HamburgerButton.astro';
+import DesktopNav from './DesktopNav.astro';
+import Hamburger from './Hamburger.astro';
+import MobileNav from './MobileNav.astro';
 ---
 
 <div class='nav-wrapper'>
   <nav class='navbar container'>
-    <ul class='nav-items'>
-      <li class='nav-item'><a href='/crea-tu-pizza'>Crea tu pizza</a></li>
-      <li class='nav-item'><a href='/promociones'>Promociones</a></li>
-      <li class='nav-item hidden font-serif text-3xl font-bold italic text-accent-primary md:block'>
-        <a href='/'>mozzabella</a>
-      </li>
-      <li class='nav-item'><a href='/carta'>La Carta</a></li>
-      <li class='nav-item'><a href='/reserva'>Reservar Mesa</a></li>
-    </ul>
-    <span class='flex-1 text-center md:hidden'>
-      <a class='font-serif text-3xl font-bold italic text-accent-primary' href='/'>mozzabella</a>
+    <DesktopNav id='desktopNavigation' />
+    <MobileNav id='mobileNavigation' />
+    <span class='mozzabella-mobile'>
+      <a class='mozzabella' href='/'>mozzabella</a>
     </span>
-    <HamburgerButton id='hamburgerButton' />
+    <Hamburger id='hamburgerButton' />
   </nav>
+</div>
 
-  <style>
-    .nav-wrapper {
-      width: 100%;
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0;
-      border-bottom: var(--secondary) 1px solid;
+<style>
+  .mozzabella {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent-primary);
+  }
+
+  .mozzabella-mobile {
+    margin: auto;
+  }
+
+  .nav-wrapper {
+    /* Positioning */
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+
+    /* Box Model */
+    width: 100%;
+
+    /* Border */
+    border-bottom: var(--secondary) 1px solid;
+  }
+
+  .navbar {
+    /* Positioning */
+    height: 100px;
+    overflow: hidden;
+
+    /* Box Model */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--primary);
+  }
+
+  /* Mobile Devices - Phones/Tablets */
+  @media (width >= 768px) {
+    .mozzabella-mobile {
+      display: none;
     }
+
     .navbar {
       display: flex;
       justify-content: space-between;
-      height: 50px;
       overflow: hidden;
       align-items: center;
     }
+  }
+</style>
 
-    .nav-items {
-      list-style: none;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transform: translate(0);
-      transition: transform 0.7s ease-in-out;
-    }
+<script>
+  import { $ } from '@/lib/dom-selector';
 
-    /* NAVIGATION */
+  function toggleMenu(nav: HTMLElement | null) {
+    nav?.classList.toggle('mobile-nav');
+  }
+  document.addEventListener('astro:page-load', function () {
+    const menuButton = $('#hamburgerButton');
 
-    /* MOBILE MENU & ANIMATION */
-
-    /* Media Queries */
-
-    /* Mobile Devices - Phones/Tablets */
-
-    @media only screen and (max-width: 768px) {
-      /* MOBILE NAVIGATION */
-
-      .navbar .nav-items {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        justify-content: flex-start;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 50px);
-        transform: translate(-101%);
-        text-align: center;
-        overflow: hidden;
-      }
-
-      .navbar li {
-        padding: 15px;
-      }
-
-      .navbar li:first-child {
-        margin-top: 50px;
-      }
-
-      .nav-wrapper .navbar ul.nav-items.mobile-nav {
-        transform: translate(0%) !important;
-      }
-    }
-  </style>
-
-  <script>
-    import { $ } from '@/lib/dom-selector';
-
-    function toggleMenu(nav: HTMLElement | null) {
-      nav?.classList.toggle('mobile-nav');
-    }
-    document.addEventListener('astro:page-load', function () {
-      const menuButton = $('#hamburgerButton');
-
-      menuButton?.addEventListener('hamburgerButtonClick', function () {
-        const nav = $('.nav-items');
-        toggleMenu(nav);
-      });
+    menuButton?.addEventListener('hamburgerButtonClick', function () {
+      const nav = $('#mobileNavigation');
+      toggleMenu(nav);
     });
-  </script>
-</div>
+  });
+</script>
