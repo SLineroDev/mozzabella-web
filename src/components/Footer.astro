@@ -1,0 +1,57 @@
+---
+
+---
+
+<footer>
+  <div class='container'>
+    <div class='footer-grid'>
+      <div class='mozzabella'>mozzabella</div>
+      <div>
+        <h3>Horario</h3>
+        <p>Lunes a Domingo</p>
+        <p>12h - 16h</p>
+        <p>19h - 23h</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>952 000 000</p>
+        <p>info@mozzabella.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang='scss'>
+  footer {
+    background-color: var(--secondary);
+    color: var(--primary);
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding: 2rem 0;
+      justify-items: stretch;
+      width: min-content;
+      margin-inline: auto;
+      text-align: center;
+
+      .mozzabella {
+        place-self: center;
+        font-size: var(--font-3xl);
+      }
+
+      div {
+        padding: 1rem;
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    footer .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: left;
+      width: auto;
+    }
+  }
+</style>

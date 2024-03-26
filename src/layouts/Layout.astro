@@ -8,6 +8,7 @@ import type { SeoProps } from '@/lib/types/seoProps';
 
 import { ViewTransitions } from 'astro:transitions';
 
+import Footer from '@/components/Footer.astro';
 import Nav from '@/components/Nav.astro';
 import Seo from '@/components/Seo.astro';
 
@@ -31,5 +32,6 @@ const { title, description, preload, canonical, image } = Astro.props;
   <body>
     <Nav />
     <slot />
+    <Footer />
   </body>
 </html>
