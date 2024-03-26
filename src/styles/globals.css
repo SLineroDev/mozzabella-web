@@ -16,8 +16,11 @@
   --font-serif: 'Merriweather', serif;
 
   --font-xl: clamp(1rem, 0.8043rem + 0.8696vw, 1.5rem);
-  --font-2xl: clamp(1.5rem, 0.913rem + 2.6087vw, 3rem);
+  --font-2xl: clamp(1.5rem, 1.1087rem + 1.7391vw, 2.5rem);
+  --font-3xl: clamp(1.5rem, 0.913rem + 2.6087vw, 3rem);
   --font-4xl: clamp(2rem, 1.2174rem + 3.4783vw, 4rem);
+
+  --border-primary: 1px solid var(--secondary);
 }
 
 html,
@@ -30,6 +33,15 @@ body {
   background-color: var(--primary);
   color: var(--color-dark);
   font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+g4,
+h5,
+h6 {
+  margin: 0;
 }
 
 .mozzabella {
