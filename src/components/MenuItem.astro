@@ -1,0 +1,58 @@
+---
+import type { IMenuItem } from '@/lib/types/menuItems';
+
+import { Image } from 'astro:assets';
+
+import Add from '@/icons/Add.astro';
+
+interface Props extends IMenuItem {}
+
+const { title, description, image } = Astro.props;
+---
+
+<div class='menu-item'>
+  <Image class={'menu-item__image'} src={image} alt={'Imagen de una pizza vegetal'} />
+  <div class='menu-item__first-row'>
+    <h3>{title}</h3>
+    <a href='/personaliza-tu-pizza'><Add /></a>
+  </div>
+  {description && description.length > 0 && <p>{description}</p>}
+</div>
+
+<style lang='scss'>
+  .menu-item {
+    background-color: var(--primary);
+    border: var(--border-primary);
+    margin-top: 150px;
+    p {
+      margin: 0;
+      padding: 1rem 0.5rem;
+      border-top: var(--border-primary);
+    }
+
+    &__first-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+
+      a {
+        line-height: 10px;
+        padding: 0.2rem;
+        border: var(--secondary) 1px solid;
+        box-shadow: 0em 0em 0 0 var(--secondary);
+
+        transition: box-shadow 150ms ease-in-out;
+
+        &:hover {
+          box-shadow: 0.1em 0.1em 0 0 var(--secondary);
+        }
+      }
+    }
+    &__image {
+      display: block;
+      margin-inline: auto;
+      margin-top: -150px;
+    }
+  }
+</style>

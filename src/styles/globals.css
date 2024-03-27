@@ -67,7 +67,6 @@ h6 {
 a {
   color: var(--secondary);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
 }
 
 ul {

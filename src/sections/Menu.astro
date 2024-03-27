@@ -1,0 +1,32 @@
+---
+import type { IMenuItem } from '@/lib/types/menuItems';
+
+import MenuItem from '@/components/MenuItem.astro';
+
+interface Props {
+  menuItems: IMenuItem[];
+}
+
+const { menuItems = [] } = Astro.props;
+---
+
+<section>
+  <div class='container'>
+    <div class='menu-grid'>
+      {
+        menuItems.map((item) => (
+          <MenuItem image={item.image} title={item.title} description={item.description} />
+        ))
+      }
+    </div>
+  </div>
+</section>
+<style lang='scss'>
+  .menu-grid {
+    padding-block: 2rem;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+
+---
+
+<section>
+  <header class='container'>
+    <h2>LA CARTA</h2>
+    <h3><span>Pizzas</span> hechas con mucho cariño</h3>
+  </header>
+  <nav>
+    <ul class='container'>
+      <li><a href='#Pizzas'>Pizzas</a></li>
+      <li><a href='#Ensaladas'>Ensaladas</a></li>
+      <li><a href='#Complementos'>Complementos</a></li>
+      <li><a href='#Postre'>Postre</a></li>
+      <li><a href='#Bebidas'>Bebidas</a></li>
+    </ul>
+  </nav>
+</section>
+
+<style lang='scss'>
+  section {
+    background-color: var(--primary);
+    header {
+      padding-block: 2rem;
+      h2 {
+        text-align: center;
+        font-weight: 300;
+        font-size: var(--font-xl);
+      }
+      h3 {
+        text-align: center;
+        font-weight: 400;
+        font-family: var(--font-serif);
+        font-size: var(--font-2xl);
+        span {
+          font-style: italic;
+          color: var(--accent-primary);
+        }
+      }
+    }
+    nav {
+      border-top: var(--border-primary);
+      border-bottom: var(--border-primary);
+      ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-block: 1.5rem;
+        overflow-x: auto;
+        li {
+          a {
+            font-weight: 300;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+
+            border: transparent 2px solid;
+            border-radius: 50%;
+
+            transition:
+              border-color 0.3s ease-in-out,
+              color 0.3s ease-in-out;
+            &:hover {
+              border-color: var(--accent-primary);
+              color: var(--accent-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
