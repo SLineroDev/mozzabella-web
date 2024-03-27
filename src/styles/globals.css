@@ -76,16 +76,18 @@ ul {
 }
 
 @supports selector(::-webkit-scrollbar) {
-  ::-webkit-scrollbar {
-    width: 10px;
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar:horizontal,
+  ::-webkit-scrollbar:vertical {
+    width: 5px;
+    height: 5px;
     border-radius: 10px;
   }
 
-  ::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb:horizontal {
     border-radius: 10px;
     background-color: var(--accent-primary);
-    border: 2px solid transparent;
-    background-clip: content-box;
   }
 
   ::-webkit-scrollbar-thumb:active {
