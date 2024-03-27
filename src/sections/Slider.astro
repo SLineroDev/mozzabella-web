@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 
 import slider1 from '@/assets/images/slider1.png';
+import Button from '@/components/Button.astro';
 ---
 
 <section>
@@ -21,7 +22,7 @@ import slider1 from '@/assets/images/slider1.png';
       <div class='slider-description'>
         <div class='slider-description__text'>2 medianas</div>
         <div class='slider-description__price'>15,99 €</div>
-        <button class='slider-description__button'>Lo quiero</button>
+        <Button>Lo Quiero</Button>
       </div>
     </div>
   </div>
@@ -81,23 +82,6 @@ import slider1 from '@/assets/images/slider1.png';
           font-size: 32px;
           font-size: var(--font-4xl);
           white-space: nowrap;
-        }
-
-        &__button {
-          background-color: var(--accent-primary);
-          color: var(--primary);
-          font-size: var(--font-xl);
-          font-weight: 700;
-          padding: 1rem 2rem;
-          border: none;
-          margin-top: 0.5rem;
-          cursor: pointer;
-
-          transition: background-color 0.2s ease-in-out;
-
-          &:hover {
-            background-color: var(--accent-primary-state);
-          }
         }
       }
     }

@@ -5,6 +5,7 @@ import MenuHeader from '@/components/MenuHeader.astro';
 import { mainMenuImages } from '@/lib/types/menuItems';
 import Menu from '@/sections/Menu.astro';
 import Promotions from '@/sections/Promotions.astro';
+import Reservation from '@/sections/Reservation.astro';
 import Slider from '@/sections/Slider.astro';
 
 import Layout from '../layouts/Layout.astro';
@@ -88,5 +89,6 @@ const otherMenuItems: IMenuItem[] = [
     <MenuHeader />
     <Menu menuItems={mainMenuItems} />
     <Menu menuItems={otherMenuItems} />
+    <Reservation />
   </main>
 </Layout>

@@ -1,0 +1,50 @@
+---
+import Button from '@/components/Button.astro';
+---
+
+<section>
+  <div class='container'>
+    <h4>
+      Tenemos una mesa para que volváis a contar aquella anécdota por enésima vez y os riáis como la
+      primera.
+    </h4>
+    <Button>Reservar Mesa</Button>
+  </div>
+</section>
+
+<style>
+  section {
+    background: url('../assets/images/reservaBg.png') no-repeat center center / cover;
+    background-color: rgba(0, 0, 0, 0.25);
+    background-blend-mode: overlay;
+    height: 700px;
+    position: relative;
+  }
+
+  .bg-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    height: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+  }
+
+  h4 {
+    font-size: var(--font-3xl);
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-style: italic;
+    max-width: 25ch;
+    color: var(--primary);
+  }
+</style>
