@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://__CHANGE__/sitemap.xml
+Sitemap: https://mozzabella-web.vercel.app/sitemap.xml
