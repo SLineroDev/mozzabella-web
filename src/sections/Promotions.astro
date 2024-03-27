@@ -1,5 +1,5 @@
 ---
-
+import PromotionCard from '@/components/PromotionCard.astro';
 ---
 
 <section>
@@ -9,33 +9,9 @@
   </header>
   <div class='container'>
     <div class='cards-container'>
-      <div class='card'>
-        <div class='card-inner'>
-          <h3>Para toda la familia</h3>
-          <div class='card-inner__description'>
-            <div class='card-inner__description_text'>2 familiares</div>
-            <div class='card-inner__description_price'>19,99€</div>
-          </div>
-        </div>
-      </div>
-      <div class='card'>
-        <div class='card-inner'>
-          <h3>Una para ti y otra para...</h3>
-          <div class='card-inner__description'>
-            <div class='card-inner__description_text'>2 medianas</div>
-            <div class='card-inner__description_price'>15,99€</div>
-          </div>
-        </div>
-      </div>
-      <div class='card'>
-        <div class='card-inner'>
-          <h3>Hoy no comparto</h3>
-          <div class='card-inner__description'>
-            <div class='card-inner__description_text'>1 individual</div>
-            <div class='card-inner__description_price'>9,99€</div>
-          </div>
-        </div>
-      </div>
+      <PromotionCard title='Para toda la familia' description='2 familiares' price='19,99€' />
+      <PromotionCard title='Una para ti y otra para...' description='2 medianas' price='15,99€' />
+      <PromotionCard title='Hoy no comparto' description='1 individual' price='9,99€' />
     </div>
   </div>
 </section>
@@ -66,95 +42,13 @@
       grid-template-columns: minmax(333px, 433px);
       justify-content: center;
       gap: 1rem;
-
-      .card {
-        aspect-ratio: 1/1;
-        background: url('https://via.placeholder.com/500') no-repeat center center;
-        padding: 2.5rem;
-        min-width: 0;
-
-        transition:
-          padding 0.3s ease-in-out,
-          color 0.3s ease-in-out;
-
-        &-inner {
-          background-color: var(--tertiary);
-          width: 100%;
-          height: 100%;
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          transition:
-            background-color 0.3s ease-in-out,
-            padding 0.3s ease-in-out,
-            color 0.3s ease-in-out;
-
-          & h3 {
-            margin-right: auto;
-            text-align: left;
-            font-size: var(--font-2xl);
-            font-family: var(--font-serif);
-            font-weight: 300;
-          }
-
-          &__description {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-
-            &_text {
-              text-transform: uppercase;
-            }
-
-            &_price {
-              font-size: var(--font-2xl);
-              font-family: var(--font-serif);
-              font-weight: 700;
-            }
-          }
-        }
-
-        &:nth-child(1) {
-          background: url('../assets/images/promotions1.png') no-repeat center center / cover;
-        }
-
-        &:nth-child(2) {
-          background: url('../assets/images/promotions2.png') no-repeat center center / cover;
-        }
-
-        &:nth-child(3) {
-          background: url('../assets/images/promotions3.png') no-repeat center center / cover;
-        }
-
-        &:hover {
-          padding: 0;
-          cursor: pointer;
-          .card-inner {
-            padding: 3.5rem;
-            background-color: var(--accent-primary);
-            color: var(--primary);
-          }
-        }
-      }
     }
   }
 
   @media (min-width: 992px) {
     section {
-      .cards-container {
+      Extracted PromotionsCar .cards-container {
         grid-template-columns: repeat(3, minmax(220px, 433px));
-        .card {
-          padding: 40px;
-          padding: clamp(1rem, -5.6429rem + 10.7143vw, 4rem);
-
-          &:hover .card-inner {
-            padding: 2rem;
-            padding: clamp(2rem, -4.6429rem + 10.7143vw, 5rem);
-          }
-        }
       }
     }
   }

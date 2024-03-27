@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+}
+
+const { title, description, price } = Astro.props;
+---
+
+<div class='card'>
+  <div class='card-inner'>
+    <h3>{title}</h3>
+    <div class='card-inner__description'>
+      <div class='card-inner__description_text'>{description}</div>
+      <div class='card-inner__description_price'>{price}</div>
+    </div>
+  </div>
+</div>
+
+<style lang='scss'>
+  .card {
+    aspect-ratio: 1/1;
+    padding: 2.5rem;
+    min-width: 0;
+
+    transition:
+      padding 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    &-inner {
+      background-color: var(--tertiary);
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      transition:
+        background-color 0.3s ease-in-out,
+        padding 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+
+      & h3 {
+        margin-right: auto;
+        text-align: left;
+        font-size: var(--font-2xl);
+        font-family: var(--font-serif);
+        font-weight: 300;
+      }
+
+      &__description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &_text {
+          text-transform: uppercase;
+        }
+
+        &_price {
+          font-size: var(--font-2xl);
+          font-family: var(--font-serif);
+          font-weight: 700;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      background: url('../assets/images/promotions1.png') no-repeat center center / cover;
+    }
+
+    &:nth-child(2) {
+      background: url('../assets/images/promotions2.png') no-repeat center center / cover;
+    }
+
+    &:nth-child(3) {
+      background: url('../assets/images/promotions3.png') no-repeat center center / cover;
+    }
+
+    &:hover {
+      padding: 0;
+      cursor: pointer;
+      .card-inner {
+        padding: 3.5rem;
+        background-color: var(--accent-primary);
+        color: var(--primary);
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .card {
+      padding: 40px;
+      padding: clamp(1rem, -5.6429rem + 10.7143vw, 4rem);
+
+      &:hover .card-inner {
+        padding: 2rem;
+        padding: clamp(2rem, -4.6429rem + 10.7143vw, 5rem);
+      }
+    }
+  }
+</style>
