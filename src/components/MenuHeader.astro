@@ -86,6 +86,7 @@
 
 <script>
   function activeLink(list: Element, allList: NodeListOf<Element>) {
+    list.scrollIntoView({ block: 'nearest', inline: 'center' });
     for (let list of allList) list.classList.remove('active');
     list.classList.add('active');
   }
@@ -98,6 +99,12 @@
     });
   }
 
+  function isInViewportInsideStickyNav(element: Element) {
+    console.log(element.getBoundingClientRect());
+    const rect = element.getBoundingClientRect();
+    return rect.top < 324 && rect.bottom > 324;
+  }
+
   window.addEventListener('DOMContentLoaded', function () {
     const allList = document.querySelectorAll('nav.menu-nav ul li');
     for (let list of allList) {
@@ -107,23 +114,20 @@
         navigateToSection(document.querySelector('section.menu#' + id)!);
       });
     }
-    //Using Intersection Observer API, detect when the section is in the viewport
-    const allSection = document.querySelectorAll('section.menu');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const intersected = entries.findLast((entry) => entry.isIntersecting);
-        if (!intersected) return;
-        const target = document.querySelector(`nav.menu-nav li#${intersected.target.id}`);
-        if (target) activeLink(target, allList);
+    const sections = document.querySelectorAll('section.menu');
+    window.addEventListener(
+      'scroll',
+      function () {
+        // Get its bounding client rectangle
+        if (!sections) return;
+        for (let section of sections) {
+          if (isInViewportInsideStickyNav(section)) {
+            const target = document.querySelector(`nav.menu-nav li#${section.id}`);
+            if (target) activeLink(target, allList);
+          }
+        }
       },
-      {
-        rootMargin: '-325px 0px 0px 0px',
-        threshold: 0.5
-      }
+      false
     );
-
-    for (let section of allSection) {
-      observer.observe(section);
-    }
   });
 </script>
