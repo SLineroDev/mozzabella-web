@@ -4,13 +4,14 @@ import type { IMenuItem } from '@/lib/types/menuItems';
 import MenuItem from '@/components/MenuItem.astro';
 
 interface Props {
+  id: string;
   menuItems: IMenuItem[];
 }
 
-const { menuItems = [] } = Astro.props;
+const { id, menuItems = [] } = Astro.props;
 ---
 
-<section>
+<section id={id} class='menu'>
   <div class='container'>
     <div class='menu-grid'>
       {
@@ -22,6 +23,14 @@ const { menuItems = [] } = Astro.props;
   </div>
 </section>
 <style lang='scss'>
+  /*   section::before {
+    display: block;
+    content: ' ';
+    margin-top: -285px;
+    height: 285px;
+    visibility: hidden;
+    pointer-events: none;
+  } */
   .menu-grid {
     padding-block: 2rem;
     display: grid;

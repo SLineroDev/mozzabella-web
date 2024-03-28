@@ -2,6 +2,7 @@
 import type { IMenuItem } from '@/lib/types/menuItems';
 
 import MenuHeader from '@/components/MenuHeader.astro';
+import { menu } from '@/data/menu';
 import { mainMenuImages } from '@/lib/types/menuItems';
 import Menu from '@/sections/Menu.astro';
 import Promotions from '@/sections/Promotions.astro';
@@ -9,86 +10,20 @@ import Reservation from '@/sections/Reservation.astro';
 import Slider from '@/sections/Slider.astro';
 
 import Layout from '../layouts/Layout.astro';
-
-const mainMenuItems: IMenuItem[] = [
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Vegetal',
-    description: 'Salsa de tomate, queso, orégano, tomátes cherrys, peperoni y rúcula',
-    image: mainMenuImages.vegetal
-  }
-];
-
-const otherMenuItems: IMenuItem[] = [
-  {
-    title: 'Coca Cola',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Coca Cola',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Coca Cola',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Coca Cola',
-    image: mainMenuImages.vegetal
-  },
-  {
-    title: 'Coca Cola',
-    image: mainMenuImages.vegetal
-  }
-];
 ---
 
 <Layout title='Mozzabella' description='Mozzabella | Pizzeria Italiana para toda la familia'>
   <main>
     <Slider />
     <Promotions />
-    <MenuHeader />
-    <Menu menuItems={mainMenuItems} />
-    <Menu menuItems={otherMenuItems} />
+    <section id='stickyMenu'>
+      <MenuHeader />
+      <Menu id='Pizzas' menuItems={menu.Pizzas} />
+      <Menu id='Ensaladas' menuItems={menu.Ensaladas} />
+      <Menu id='Complementos' menuItems={menu.Complementos} />
+      <Menu id='Postres' menuItems={menu.Postres} />
+      <Menu id='Bebidas' menuItems={menu.Bebidas} />
+    </section>
     <Reservation />
   </main>
 </Layout>

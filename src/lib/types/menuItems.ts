@@ -8,6 +8,8 @@ export interface IMenuItem {
   image: ImageMetadata;
 }
 
+export type Categories = 'Pizzas' | 'Ensaladas' | 'Complementos' | 'Postres' | 'Bebidas';
+
 export const mainMenuImages = {
   vegetal: Vegetal
 };

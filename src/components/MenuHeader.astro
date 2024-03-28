@@ -7,13 +7,13 @@
     <h2>LA CARTA</h2>
     <h3><span>Pizzas</span> hechas con mucho cariño</h3>
   </header>
-  <nav>
+  <nav class='menu-nav'>
     <ul class='container'>
-      <li><a href='#Pizzas'>Pizzas</a></li>
-      <li><a href='#Ensaladas'>Ensaladas</a></li>
-      <li><a href='#Complementos'>Complementos</a></li>
-      <li><a href='#Postre'>Postre</a></li>
-      <li><a href='#Bebidas'>Bebidas</a></li>
+      <li id='Pizzas'>Pizzas</li>
+      <li id='Ensaladas'>Ensaladas</li>
+      <li id='Complementos'>Complementos</li>
+      <li id='Postres'>Postres</li>
+      <li id='Bebidas'>Bebidas</li>
     </ul>
   </nav>
 </section>
@@ -21,6 +21,16 @@
 <style lang='scss'>
   section {
     background-color: var(--primary);
+    position: sticky;
+    top: 101px;
+    left: 0;
+
+    &::after {
+      display: block;
+      opacity: 0;
+      background: transparent;
+      height: 100px;
+    }
     header {
       padding-block: 2rem;
       h2 {
@@ -49,25 +59,71 @@
         padding-block: 1.5rem;
         overflow-x: auto;
         li {
-          a {
-            font-weight: 300;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
+          font-weight: 300;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
 
-            border: transparent 2px solid;
-            border-radius: 50%;
+          border: transparent 2px solid;
+          border-radius: 50%;
 
-            transition:
-              border-color 0.3s ease-in-out,
-              color 0.3s ease-in-out;
-            &:hover {
-              border-color: var(--accent-primary);
-              color: var(--accent-primary);
-            }
+          transition:
+            border-color 0.3s ease-in-out,
+            color 0.3s ease-in-out;
+          &:hover {
+            cursor: pointer;
+          }
+          &:hover,
+          &.active {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
           }
         }
       }
     }
   }
 </style>
+
+<script>
+  function activeLink(list: Element, allList: NodeListOf<Element>) {
+    for (let list of allList) list.classList.remove('active');
+    list.classList.add('active');
+  }
+
+  function navigateToSection(section: Element) {
+    const top = section.getBoundingClientRect().top;
+    window.scrollTo({
+      top: top + window.scrollY - 300,
+      behavior: 'smooth'
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    const allList = document.querySelectorAll('nav.menu-nav ul li');
+    for (let list of allList) {
+      list.addEventListener('click', function () {
+        activeLink(list, allList);
+        const id = list.getAttribute('id');
+        navigateToSection(document.querySelector('section.menu#' + id)!);
+      });
+    }
+    //Using Intersection Observer API, detect when the section is in the viewport
+    const allSection = document.querySelectorAll('section.menu');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const intersected = entries.findLast((entry) => entry.isIntersecting);
+        if (!intersected) return;
+        const target = document.querySelector(`nav.menu-nav li#${intersected.target.id}`);
+        if (target) activeLink(target, allList);
+      },
+      {
+        rootMargin: '-325px 0px 0px 0px',
+        threshold: 0.5
+      }
+    );
+
+    for (let section of allSection) {
+      observer.observe(section);
+    }
+  });
+</script>
