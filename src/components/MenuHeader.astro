@@ -85,6 +85,7 @@
 </style>
 
 <script>
+  let disableScroll = false;
   function activeLink(list: Element, allList: NodeListOf<Element>) {
     list.scrollIntoView({ block: 'nearest', inline: 'center' });
     for (let list of allList) list.classList.remove('active');
@@ -93,10 +94,14 @@
 
   function navigateToSection(section: Element) {
     const top = section.getBoundingClientRect().top;
+    disableScroll = true;
     window.scrollTo({
-      top: top + window.scrollY - 300,
+      top: top + window.scrollY - 324,
       behavior: 'smooth'
     });
+    setTimeout(() => {
+      disableScroll = false;
+    }, 1000);
   }
 
   function isInViewportInsideStickyNav(element: Element) {
@@ -118,6 +123,7 @@
     window.addEventListener(
       'scroll',
       function () {
+        if (disableScroll) return;
         // Get its bounding client rectangle
         if (!sections) return;
         for (let section of sections) {
