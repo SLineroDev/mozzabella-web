@@ -82,6 +82,13 @@
       }
     }
   }
+
+  @media (hover: none) {
+    li:hover {
+      color: inherit;
+      border-color: inherit;
+    }
+  }
 </style>
 
 <script>
@@ -96,7 +103,7 @@
     const top = section.getBoundingClientRect().top;
     disableScroll = true;
     window.scrollTo({
-      top: top + window.scrollY - 324,
+      top: top + window.scrollY - 300,
       behavior: 'smooth'
     });
     setTimeout(() => {
